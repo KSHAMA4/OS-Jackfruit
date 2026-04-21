@@ -86,7 +86,7 @@ make clean
 ### Screenshot 1 — Multi-Container Supervision
 Two containers (alpha and beta) running simultaneously under one supervisor process.
 Both containers are tracked with their PIDs, state, and memory limits.
-![Screenshot 1](multi_container_supervision.jpeg)
+![Screenshot 1](multi_container.jpeg)
 
 ### Screenshot 2 — Metadata Tracking
 Output of `engine ps` showing container ID, PID, state, exit code, soft and hard memory limits for each tracked container.
@@ -96,12 +96,12 @@ Output of `engine ps` showing container ID, PID, state, exit code, soft and hard
 ### Screenshot 3 — Bounded-Buffer Logging
 Log file contents for container alpha captured through the pipe-based logging pipeline. The producer thread reads from the container pipe and pushes into the bounded buffer; the consumer thread pops and writes to the log file.
 
-![Screenshot 1](bounded_buffer_logging.jpeg)
+![Screenshot 1](bounded.jpeg)
 
 ### Screenshot 4 — CLI and IPC
 The `engine stop alpha` command is issued from the CLI process, sent over a UNIX domain socket to the supervisor, which responds with confirmation. The supervisor updates the container state accordingly.
 
-![Screenshot 1](cli_and_ipc.jpeg)
+![Screenshot 1](cli.jpeg)
 
 ### Screenshot 5 — Soft-Limit Warning
 dmesg output showing the kernel module emitting a SOFT LIMIT warning when the container's RSS exceeded the configured soft limit of 10 MiB.
@@ -116,12 +116,12 @@ dmesg output showing the kernel module sending SIGKILL to the container when RSS
 ### Screenshot 7 — Scheduling Experiment
 Two containers running with different nice values (-5 for alpha, +10 for beta). Alpha receives more CPU time due to higher priority, visible in the log output where alpha progresses faster than beta.
 
-![Screenshot 1](scheduling_experiment.png)
+![Screenshot 1](scheduling.jpeg)
 
 ### Screenshot 8 — Clean Teardown
 All containers show exited state with no zombie processes remaining. The `ps aux | grep defunct` output confirms no lingering processes after shutdown.
 
-![Screenshot 1](clear.jpeg)
+![Screenshot 1](clean.jpeg)
 
 ---
 
