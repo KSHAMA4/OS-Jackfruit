@@ -94,7 +94,7 @@ Output of `engine ps` showing container ID, PID, state, exit code, soft and hard
 
 ### Screenshot 3 — Bounded-Buffer Logging
 Log file contents for container alpha captured through the pipe-based logging pipeline. The producer thread reads from the container pipe and pushes into the bounded buffer; the consumer thread pops and writes to the log file.
-![Screenshot 1](bounded_buffer_logging-Copyjpeg)
+![Screenshot 1](bounded_buffer_logging.jpeg)
 
 ### Screenshot 4 — CLI and IPC
 The `engine stop alpha` command is issued from the CLI process, sent over a UNIX domain socket to the supervisor, which responds with confirmation. The supervisor updates the container state accordingly.
